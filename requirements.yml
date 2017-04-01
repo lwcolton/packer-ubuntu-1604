@@ -1,3 +1,4 @@
 ---
-- src: geerlingguy.packer-debian
-- src: geerlingguy.nfs
+- src: https://github.com/lwcolton/ansible-role-packer-debian
+  name: packer-debian
+  version: colton

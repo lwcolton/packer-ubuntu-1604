@@ -1,26 +1,4 @@
 {
-  "provisioners": [
-    {
-      "type": "shell",
-      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
-      "script": "scripts/ansible.sh"
-    },
-    {
-      "type": "shell",
-      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
-      "script": "scripts/setup.sh"
-    },
-    {
-      "type": "ansible-local",
-      "playbook_file": "ansible/main.yml",
-      "galaxy_file": "requirements.yml"
-    },
-    {
-      "type": "shell",
-      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
-      "script": "scripts/cleanup.sh"
-    }
-  ],
   "builders": [
     {
       "type": "virtualbox-iso",
@@ -51,7 +29,7 @@
         "<enter><wait>"
       ],
       "boot_wait": "10s",
-      "disk_size": 81920,
+      "disk_size": 2048,
       "guest_os_type": "Ubuntu_64",
       "headless": true,
       "http_directory": "http",
@@ -83,12 +61,6 @@
           "1"
         ]
       ]
-    }
-  ],
-  "post-processors": [
-    {
-      "output": "builds/{{.Provider}}-ubuntu1604.box",
-      "type": "vagrant"
     }
   ]
 }

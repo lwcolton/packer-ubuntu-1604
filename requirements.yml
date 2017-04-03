@@ -1,4 +1,0 @@
----
-- src: https://github.com/lwcolton/ansible-role-packer-debian
-  name: packer-debian
-  version: colton
